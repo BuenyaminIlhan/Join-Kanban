@@ -1,0 +1,143 @@
+.desktop-page{
+    display: flex;
+    flex-direction: column;
+}
+
+.new-contact-container-2{
+    box-sizing: border-box;
+    color: white;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 21px;
+    margin-bottom: 16px;
+    padding: 18px 10px;
+    gap: 10px;
+    width: 193px;
+    height: 53px;
+    background: #2A3647;
+    border: 1px solid #2A3647;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.new-contact-mobile-container{
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+
+  height: 64px;
+  background: #2A3647;
+  border: 1px solid #2A3647;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 100%;
+  cursor: pointer;
+  position: fixed;
+  bottom: -132px;
+  right: -50px;
+}
+
+.contact-information-frame{
+    display: flex;
+    align-items: center;
+}
+
+.edit-pen{
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 48px;
+    flex: 1;
+    cursor: pointer;
+}
+
+.edit-pen:hover{
+    color: #007CEE;
+}
+
+.edit-contact-logo{
+    margin-top: 15px;
+}
+
+.edit-contact-text{
+    margin-top: 26px;
+    margin-left: 4px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.big-contact-frame-header{
+    display: flex;
+    flex-direction: column;
+}
+
+.standard-hr{
+    margin-right: 24px;
+}
+
+.close-x-dark{
+    height: 21px;
+    width: 21px;
+    cursor: pointer;
+}
+
+.create-contact{
+
+    margin-bottom: 16px;
+}
+
+  #add-contact, #edit-contact{
+    transition: transform 0.125s ease-in-out;
+    transform: translateY(140%);
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .slide-in {
+    transform: translateY(0) !important;
+  }
+
+  .slide-in2 {
+    transform: translateY(0) !important;
+    z-index: 0;
+  }
+
+  .close-x-dark-container{
+    display: none;
+  }
+
+  .buttons{
+    display: flex;
+    justify-content: center;
+  }
+
+  .contac-succesfully-created-frame {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    bottom: 200px;
+    transform: translateY(400%);
+    transition: transform 0.125s ease-in-out;
+  }
+
+  .contac-succesfully-created-popup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2A3647;
+    border: none;
+    border-radius: 10px;
+    width: 326px;
+    height: 74px;
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 400;
+  }
+
+

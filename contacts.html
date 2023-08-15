@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="./asssets/css/contacts.css">
+    <link rel="stylesheet" href="./asssets/css/contact_media.css">
+    <link rel="stylesheet" href="./asssets/css/contacts_desktop.css">
+    <link rel="stylesheet" href="./asssets/css/header.css">
+    <link rel="stylesheet" href="./asssets/css/add_task_popUp.css">
+    <link rel="shortcut icon" href="./asssets/img/mobile-login-logo-dark.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./asssets/css/footer.css">
+    <script src="./js/board.js"></script>
+    <script src="./js/storage.js"></script>
+    <script src="./js/contacts.js"></script>
+    <script src="./js/contacs_create_html.js"></script>
+    <link rel="stylesheet" href="./asssets/css/web_header.css">
+    <script src="./js/header_include.js"></script>
+</head>
+<body onload="loadContacts(); init(); loadNewtasks()">
+    <div w3-header-include-html="./asssets/templates/header.html"></div>
+    <div onclick="closeBurgerMenu()" id="web-header" class="web-header">
+        <span>Kanban Project Mangement Tool</span>
+        <div class="img-container">
+            <img onclick="location.href='./help.html'" class="question-icon" src="./asssets/img/question_icon.svg"
+                alt="">
+            <img id="person-img" onclick="burgerMenu()" class="person" src="./asssets/img/person.svg" alt="">
+        </div>
+    </div>
+    <div onclick="closeBurgerMenu()" id="background-container">
+        <div class="burger-menu-outer-container">
+            <div id="burger-menu">
+                <a class="help" href="#">Help</a>
+                <a class="privacy" href="#">Leagal notice</a>
+                <a href="./index.html">Log out</a>
+            </div>
+        </div>
+    </div>
+    <div class="nav-bar-container">
+        <div id="nav-bar" onclick="closeBurgerMenu()" class="logo-container">
+            <img class="logo-white" src="./asssets/img/Join_logo_white.svg" alt="">
+        </div>
+        <nav id="nav-bar" onclick="closeBurgerMenu()">
+            <div class="nav-link-container">
+                <div onclick="location.href='./summary.html'">
+                    <img class="icon" src="./asssets/img/Summary_icon_grey.svg" alt="">
+                    <span id="nav-summary">Summary</span>
+                </div>
+                <div onclick="location.href='./board.html'">
+                    <img class="icon" src="./asssets/img/Board_icon.svg" alt="">
+                    <span>Board</span>
+                </div>
+                <div onclick="location.href='./add_task.html'">
+                    <img class="icon" src="./asssets/img/Add_Task_icon.svg" alt="">
+                    <span>Add Task</span>
+                </div>
+                <div onclick="location.href='./contacts.html'" style="background-color:#091931 ;">
+                    <img class="icon" src="./asssets/img/contacts_icon_white.svg" alt="">
+                    <span style="color: white;">Contacts</span>
+                </div>
+            </div>
+            <div onclick="location.href='./privacy_policy.html'" class="legal-container">
+                <img src="./asssets/img/info.svg" alt="">
+                <span>Legal notice</span>
+            </div>
+        </nav>
+        <div>
+        </div>
+    </div>
+    <div class="desktop-page">
+        <div class="new-contact-frame">
+            <div class="new-contact-container-frame">
+                <div onclick="openAddContactsOverlay()" class="new-contact-mobile-container">
+                    <img src="./asssets/img/new-contact.svg" alt="New Contact">
+                </div>
+            </div>
+            <div id="contact-frame" class="contact-frame">
+        </div>
+        <div id="content-big-contact" class="content-big-contact d-none">
+            <div id="big-contact-frame" class="big-contact-frame">
+                <div class="big-contact-frame-header">
+                    <h3 class="kpmt">Kanban Project Management Tool</h3>
+                    <div onclick="closeContactDetails()" class="h1-back-arrow">
+                        <div class="order1">
+                            <h1>Contacts</h1>
+                        </div>
+                        <img class="back-arrow" src="./asssets/img/arrow-left-line.svg" alt="back arrow">
+                    </div>
+                    <div class="order3">
+                        <h3 class="better-with-a-team">Better with a team</h3>
+                    </div>
+                    <div class="order2">
+                        <hr class="hr-blue-small-left">
+                    </div>
+                </div>
+                <div id="desktop-hidden">
+                    <div class="name-add-task-logo">
+                        <span class="contact-logo-big ${contact['icon-color']}">AM</span>
+                        <div class="name-add-task">
+                            <span id="big-name${i}" class="big-name">Anton Mayer</span>
+                            <span  class="email ">+ Add Task</span>
+                        </div>
+                    </div>
+                    <div class="contact-information-frame">
+                        <h3 class="contact-information">Contact Information</h3>
+                        <div class="edit-pen" onclick="openEditContacts()">
+                            <img onmousemove="changePenColorToBlue()" onmouseleave="changePenColorToBlack()"
+                                id="edit-contact-logo" class="edit-contact-logo" src="./asssets/img/edit-contact.svg"
+                                alt="edit contact logo">
+                            <span class="edit-contact-text">Edit Contact</span>
+                        </div>
+                    </div>
+                    <div class="email-data">
+                        <span class="email-head">Email</span>
+                        <span id="email-adress${i}" class="email-adress-blue">antom@gmail.com</span>
+                    </div>
+                    <div class="mobile-data">
+                        <span class="mobile-head">Mobil</span>
+                        <span id="mobile-number${i}" class="mobile-number-blue">+49 1111 111 11 1</span>
+                    </div>
+                </div>
+                <div class="delet-edit-frame">
+                    <img class="bin" src="./asssets/img/delete-bin.svg" alt="delete bin">
+                    <img onclick="openEditContacts()" class="pen" src="./asssets/img/edit.svg" alt="edit pen">
+                </div>
+                <div onclick="openAddContactsOverlay()" class="new-contact-container-2">
+                    <span>New Contact</span>
+                    <img src="./asssets/img/new-contact.svg" alt="New Contact">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="edit-contact" class="edit-contact">
+        <div class="edit-contact-frame">
+            <div class="edit-contact-head">
+                <div onclick="closeEditContacts()" class="x-container">
+                    <img class="close-x" src="./asssets/img/close-x.svg" alt="close x-icon">
+                </div>
+                <img class="join-logo-white d-none" src="./asssets/img/join-logo-white.svg" alt="Join logo">
+                <h1 class="white">Edit Contact</h1>
+                <hr id="hr-blue-small-left" class="hr-blue-small-left">
+
+            </div>
+            <div class="edit-contact-bottom">
+                <span class="contact-logo-bigger light-orange">TW</span>
+                <form>
+                    <div class="close-x-dark-container" onclick="closeEditContacts()">
+                        <img class="close-x-dark d-none" src="./asssets/img/close-x-dark.svg" alt="close x">
+                    </div>
+                    <div class="input-field-top">
+                        <textarea class="name-displayed" name="name" id="name-displayed" cols="50"
+                            rows="10">Tatjana Wolf</textarea>
+                        <input class="name-input d-none" type="name" required placeholder="Name">
+                        <img src="./asssets/img/name-head.svg" alt="name icon">
+                    </div>
+                    <div class="input-field">
+                        <textarea class="email-displayed" name="name" id="email-deisplayed" cols="50"
+                            rows="10">wolf@gmail.com</textarea>
+                        <input class="email-input d-none" type="email" placeholder="Email">
+                        <img src="./asssets/img/email-icon.svg" alt="email icon">
+                    </div>
+                    <div class="input-field">
+                        <textarea class="phone-displayed" name="name" id="phone-displayed" cols="50"
+                            rows="10">+49 2222 222 22 2</textarea>
+                        <input class="tel-input d-none" type="number" placeholder="Phone">
+                        <img src="./asssets/img/tel.svg" alt="name icon">
+                    </div>
+                    <div class="delete-save">
+                        <div class="delete">Delete</div>
+                        <button class="create-contact">
+                            <div class="create-contact-text white">Save</div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="add-contact" class="add-contact">
+        <div class="edit-contact-frame">
+            <div class="edit-contact-head">
+                <div onclick="closeAddContactsOverlay()" class="x-container">
+                    <img class="close-x" src="./asssets/img/close-x.svg" alt="close x-icon">
+                </div>
+                <img class="join-logo-white d-none" src="./asssets/img/join-logo-white.svg" alt="Join logo">
+                <h1 class="white add-contact-h1">Add Contact</h1>
+                <span class="tasks-are-better white">Tasks are better with a team</span>
+                <hr id="hr-blue-small-left" class="hr-blue-small-left">
+            </div>
+            <div class="add-contact-bottom">
+                <span class="contact-logo-template gray">
+                    <img class="big-head" src="./asssets/img/big-head.svg" alt="person head">
+                </span>
+                <div class="form-and-buttons">
+                    <div onclick="closeAddContactsOverlay()" class="close-x-dark-container">
+                        <img class="close-x-dark" src="./asssets/img/close-x-dark.svg" alt="close x-icon">
+                    </div>
+                    <form onsubmit="createNewContact(); return false">
+                        <div class="input-field-top">
+                            <input required id="name-input" class="name-input" type="name" placeholder="Name">
+                            <img src="./asssets/img/name-head.svg" alt="name icon">
+                        </div>
+                        <div class="input-field">
+                            <input required id="email-input" class="email-input" type="email" placeholder="Email">
+                            <img src="./asssets/img/email-icon.svg" alt="email icon">
+                        </div>
+                        <div id="input-field" class="input-field">
+                            <input required id="tel-input" class="tel-input" type="text" pattern="[0-9\s]*"
+                                placeholder="Phone">
+                            <img src="./asssets/img/tel.svg" alt="name icon">
+                        </div>
+                        <div class="buttons">
+                            <button class="create-contact">
+                                <div class="create-contact-text white">Create contact</div>
+                                <img class="check-white" src="./asssets/img/check-white.svg" alt="check">
+                            </button>
+                            <div onclick="deleteInputFields()" class="cancle d-none">
+                                <div class="cancle-text">Cancle</div>
+                                <img class="x-dark" src="./asssets/img/close-x-dark.svg" alt="Cancle">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contac-succesfully-created-frame" id="popup">
+        <div class="contac-succesfully-created-popup">
+            <span>Contact successfully created</span>
+        </div>
+     </div>
+
+     <!-- Form-alert -->
+    <div id="myCustomPopup" class="popupContainer">
+        <div class="popupBody">
+            <span id="popupDismiss">&times;</span>
+            <p id="popupNote"></p>
+        </div>
+      </div>
+
+    
+
+     <!-------------------- Add Task popUp----------------------->
+    <div class="popup-overlay">
+        <div class="popup-content" id="popupContent">
+            <header class="header-popup">
+                <img class="small-logo" src="./add_task_img/small-logo.svg" alt="Logo" />
+                <button onclick="createTask()" id="create-button">Create &#10003;</button>
+            </header>
+            <div class="wrapper">
+                <div class="site-title">
+                    <h1>Add Task</h1>
+                    <img class="close-task" src="./asssets/img/close-x-dark.svg" alt="" onclick="closePopup()">
+                </div>
+                <div class="inner-wrap">
+                  <section class="section-one">
+                    <form class="add-task-form">
+                      <label for="title-input">Title</label>
+                      <input class="all-input" id="title-input" type="text" name="title" required />
+            
+                      <label for="description-input" >Description</label>
+                      <textarea id="description-input" name="description" required></textarea>
+            
+                      <label for="Category">Category</label>
+                      <div onclick="selectTaskCategory()" id="select-one" class="select-one">
+                        <div class="select-one-div">
+                          <span>Select task category</span>
+                          <img src="" alt="">
+                        </div>
+                        <img src="./asssets/img/open.svg" alt="" />
+                      </div>
+            
+                      <div id="selected-image"></div>
+                  
+                      <div id="dropdown" class="d-none">
+                        <div onclick="showNewCategoryFields()" id="selected-one" class="selected">
+                          <span>New Category</span>
+                        </div>
+                        <div onclick="selectOption(event, '#00FF00')" id="selected-two" class="selected">
+                            <span>Sales</span>
+                            <div class="circle green"></div>
+                          </div>
+                          <div onclick="selectOption(event, '#2A3647')" id="selected-three" class="selected">
+                            <span>Backoffice</span>
+                            <div class="circle dark-blue"></div>
+                          </div>
+                      </div>
+                  
+                      <div id="new-category-fields" class="d-none">
+                        <input id="new-category-name" type="text" placeholder="Category name">
+                        <div class="icons-wrapper-two">
+                          <img src="./asssets/img/cancel-svg.svg" id="cross-icon" onclick="cancelNewCategory()">
+                          |
+                          <img src="./asssets/img/checkmark.svg" id="check-icon" onclick="saveNewCategory()">
+                        </div>
+                        
+                        <div id="new-category-colors">
+                          <div class="circle dark-blue" onclick="selectColor('#2A3647')"></div>
+                          <div class="circle green" onclick="selectColor('#00FF00')"></div>
+                          <div class="circle light-blue" onclick="selectColor('#ADD8E6')"></div>
+                          <div class="circle orange" onclick="selectColor('#FFA500')"></div>
+                          <div class="circle pink" onclick="selectColor('#FFC0CB')"></div>
+                          <div class="circle red" onclick="selectColor('#FF0000')"></div>
+                        </div>
+                      </div>
+                      
+                      <label for="Assigned-to">Assigned to</label>
+                      <div onclick="selectAssignedTo()" id="assign-one" class="select-one">
+                        <span>Select assigned person</span>
+                        <img src="./add_task_img/open.svg" alt="" />
+                      </div>
+                      
+                      <div id="dropdown-assign" class="d-none">
+                        <div onclick="showInviteContactFields()" id="assigned-three" class="selected">
+                          <span>Invite new contact</span>
+                          <img src="./add_task_img/kontakt.svg" id="contact-icon" class="icon-style" />
+                        </div>
+                      </div>
+
+                      <div id="selected-contact"></div>
+                      
+                      <div id="new-contact-fields" class="d-none">
+                        <input type="text" id="new-contact-email" placeholder="Enter email address">
+                        <div class="icons-wrapper-three">
+                          <img src="./asssets/img/cancel-svg.svg" id="cross-icon2" onclick="cancelInviteContact()">
+                          |
+                          <img src="./asssets/img/checkmark.svg" id="check-icon2" onclick="saveInviteContact()">
+                        </div>
+                      </div>
+            
+            
+                    </form>
+                  </section>
+            
+                  <div class="vertical-line"></div>
+            
+                  <section class="section-two">
+                    <form class="add-task-form">
+                      <label for="date-input">Due Date</label>
+                      <div class="date-input-container">
+                        <input class="all-input" type="date" placeholder="dd/mm/yyyy" />
+                      </div>
+            
+                     
+            
+                      <label for="prio-buttons">Prio</label>
+                      <div id="prio-buttons">
+                        <img id="urgent" class="prio-img" src="./asssets/img/urgent-urgent.svg" alt="">
+                        <img id="medium" class="prio-img" src="./asssets/img/medium-urgent.svg" alt="">
+                        <img id="low" class="prio-img" src="./asssets/img/low-urgent.svg" alt="">
+                      </div>
+            
+                      
+            
+            
+            
+                      <label for="subTask">Subtasks</label>
+                      <div class="subtask-input-wrapper" onmouseover="toggleIcons('block')" onmouseout="toggleIcons('none')">
+                        <input type="text" id="subTask" class="subtask-input all-input" placeholder="Add new subtask">
+                        <img src="../../asssets/img/plus-black.svg" class="plus-icon">
+                        <div class="icons-wrapper">
+                          <img src="./asssets/img/cancel-svg.svg" id="cross-icon" onclick="clearInput()">
+                          |
+                          <img src="./asssets/img/checkmark.svg" id="check-icon" onclick="createSubtask()">
+                        </div>
+                      </div>
+            
+                      <div id="subtasks"> 
+                        <div class="subtask">
+                          <input type="checkbox" id="subtask1" name="subtask1" class="checkbox-subtask" />
+                          <label class="subtask-name" for="subtask1">Subtask 1</label>
+                        </div>
+                      </div>
+            
+            
+                      <div class="btn-div" onclick="closePopup()">
+                        <div class="cancel-btn-desktop">
+                          <span>Cancel</span>
+                          <img class="cancel-img" src="./asssets/img/cancel-svg.svg" alt="">
+                        </div>
+              
+                        <div class="create-btn-desktop">
+                          <span>Create task</span>
+                          <img class="create-correctly" src="./asssets/img/hook-correctly.png" alt="">
+                        </div>
+                      </div>
+            
+                    </form>
+                  </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="summary-div" class="icon-container summary">
+            <a href="./summary.html"><img class="icon" src="./asssets/img/Summary_icon_grey.svg" alt=""></a>
+            <a href="./summary.html"><span>Summary</span></a>
+        </div>
+        <div id="board-div" class="icon-container">
+            <a href="./board.html"><img class="icon" src="./asssets/img/Board_icon.svg" alt=""></a>
+            <a href="./board.html"><span>Board</span></a>
+        </div>
+        <div id="add-task-div" class="icon-container">
+            <a href="./add_task.html"><img class="add-task-icon" src="./asssets/img/Add_Task_icon.svg" alt=""></a>
+            <a href="./add_task.html"><span>Add Task</span></a>
+        </div>
+        <div id="contacts-div" class="icon-container" style="background-color: #091931; height: 87%;">
+            <a href="./contacts.html"><img class="icon-contacts" src="./asssets/img/contacts_icon_white.svg" alt=""></a>
+            <a href="./contacts.html"><span style="color: white">Contacts</span></a>
+        </div>
+    </footer>
+    <div class="task-added-container">
+        <div id="task-added">
+            <span>Task added to board</span>
+            <img src="./add_task_img/gitter.svg" alt="">
+        </div>
+    </div>
+    <script src="./js/header_include.js"></script>
+    <script src="./js/add_task.js"></script>
+</body>
+
+</html>

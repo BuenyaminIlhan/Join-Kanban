@@ -1,0 +1,690 @@
+/* ======= Global Styles ======== */
+
+@font-face{
+    font-family: Inter;
+    src: url(/asssets/fonts/Inter-Regular.ttf);
+}
+
+
+*{
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Inter, sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1{
+    margin-left: 33px;
+    margin-top: 20px;
+    font-size: 47px;
+    font-weight: 700;
+}
+
+a{
+text-decoration: none;
+color: black;
+}
+
+.d-none{
+    display: none !important;
+}
+
+/* ======= Colors ======= */
+
+.brown{
+    background: #333303;
+}
+
+.yellow{
+    background: #E1E104;
+}
+
+.orange{
+    background: #FF7A00;
+}
+
+.light-orange{
+    background: #FFC700;
+}
+
+
+.purple{
+    background: #9327FF;
+}
+
+.dark-blue{
+    background: #0223CF;
+}
+
+.light-blue{
+    background: #29ABE2;
+}
+
+.pink{
+    background: #FC71FF;
+}
+
+.dark-pink{
+    background: #944796;
+}
+
+.light-green{
+    background: #02fe38;
+}
+
+.green{
+    background: #02CF2F;
+}
+
+.dark-green{
+    background: #077E21;
+}
+
+.light-red{
+    background: #F42424;
+}
+
+.red{
+    background: #AF1616;
+}
+
+.dark-red{
+    background: #901e1e;
+}
+
+.gray{
+    background: #D1D1D1;
+}
+
+.white{
+    color: #FFFFFF;
+}
+
+
+/* ======= Main Contacs CSS ======== */
+
+.new-contact-frame {
+    display: flex;
+    flex-direction: column;
+    padding-top: 17px;
+    gap: 10px;
+    margin-top: 16px;
+    margin-bottom: 100px;
+    width: 370px;
+}
+
+.new-contact-container-frame{
+    margin-top: 96px;
+    display: flex;
+    justify-content:center;
+}
+
+.new-contact-container {
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 21px;
+    padding: 18px 10px;
+    gap: 10px;
+    width: 193px;
+    height: 53px;
+    background: #2A3647;
+    border: 1px solid #2A3647;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.contact-frame {
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+}
+
+.contact-frame h2 {
+    font-size: 21px;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 48px;
+    margin-left: 56px;
+}
+
+hr {
+    margin-top: 16px;
+    margin-left: 28px;
+}
+
+.single-contact-frame {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-bottom: 16px;
+}
+
+.name-and-email {
+    display: flex;
+    flex-direction: column;
+    margin-right: 56px;
+}
+
+.contact-logo {
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-left: 25px;
+    margin-top: 15px;
+    margin-right: 22px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.name {
+    font-size: 21px;
+    font-weight: 400;
+    margin-top: 15px;
+}
+
+.email {
+    color: #007CEE;
+    font-size: 16px;
+    font-weight: 400;
+    min-width: 150px;
+    max-width: 160px;
+}
+
+.letter-frame {
+    width: 100%;
+}
+
+/* ======= Big Contact ======= */
+
+.content-big-contact {
+    background: #F6F7F8;
+    position: fixed !important;
+    top: 75px;
+    /* bottom: 0;
+    left: 0; */
+    right: 0;
+}
+
+.kpmt{
+    padding-top: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 34px;
+}
+
+.h1-back-arrow{
+    display: flex;
+    justify-content: space-between;
+}
+
+.back-arrow{
+    margin-right: 34px;
+    cursor: pointer;
+}
+
+.better-with-a-team, .contact-information {
+    margin-left: 34px;
+    margin-top: 20px;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.hr-blue-small-left {
+    height: 3px;
+    width: 90px;
+    background-color: #29ABE2;
+    border: none;
+}
+
+.name-add-task-logo{
+    display: flex;
+    align-items: center;
+}
+
+.name-add-task{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-logo-big {
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-left: 25px;
+    margin-top: 32px;
+    margin-right: 22px;
+    font-size: 27px;
+    font-weight: 400;
+}
+
+.big-name{
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.email-data, .mobile-data {
+    display: flex;
+    flex-direction: column;
+    margin-top: 21px;
+    margin-left: 34px;
+}
+
+.email-head, .mobile-head {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.email-adress-blue, .mobile-number-blue{ 
+    color: #007CEE
+    ;
+}
+
+.delet-edit-frame{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.bin{
+    height: 40px;
+    width: 40px;
+    margin-right: 22px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.pen{
+    height: 50px;
+    width: 50px;
+    margin-right: 22px;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+
+/* ======= Edit Contact ======== */
+
+.edit-contact, .add-contact{
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:  #F5F5F5;;
+    z-index: 99;
+}
+
+.edit-contact-head{
+    height: 364px;
+    background: #2A3647;
+    border-radius: 20px  20px 0 0;
+    position: relative;
+}
+
+.edit-contact-frame{
+    max-width: 320px;
+}
+
+.edit-contact-bottom, .add-contact-bottom{
+    background: #FFFFFF;
+    position: relative;
+    border-radius: 0 0 20px 20px ;
+}
+.close-x{
+    margin-top: 21px;
+    margin-right: 16px;
+    margin-bottom: 91px;
+    cursor: pointer;
+}
+
+.bigger-logo-frame{
+    background: #FFFFFF;
+}
+
+.contact-logo-bigger {
+    position: absolute; 
+    left: 50%; 
+    transform: translate(-50%, -60%); 
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    font-weight: 400;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field-top{
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    margin: 64px 16px 0 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-field{
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    margin: 32px 16px 0 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-input, .email-input, .tel-input{
+    border: none;
+    margin-top: 6px;
+    margin-left: 10px;
+    margin-right: -16px;
+    outline: none;
+    font-size: 21px;
+    font-weight: 400;
+    cursor: pointer;
+    width: 400px;
+}
+
+.input-field img, .input-field-top img {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.name-displayed, .email-displayed, .phone-displayed{
+    border: none;
+    resize: none;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    font-size: 21px;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+.delete-save{
+    margin-top: 32px;
+    margin-bottom: 16px;
+    margin-left: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.delete, .cancle {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 10px 13px;
+    margin-right: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.save{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 41px;
+    background: #2A3647;
+    border: 1px solid #2A3647;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 146px;
+}
+
+/* ======= Add Contact ======= */
+
+.create-contact-container{
+    display: flex;
+    justify-content: center;
+}
+
+.x-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tasks-are-better{
+    margin-left: 34px;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.contact-logo-template {
+    position: absolute; 
+    left: 50%; 
+    transform: translate(-50%, -65%); 
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border: 3px solid #FFFFFF;
+    z-index: 999;
+}
+
+.big-head{
+    margin-bottom: 16px;
+}
+
+.create-contact{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 182px;
+    height: 41px;
+    background: #2A3647;
+    border: 1px solid #2A3647;
+    border-radius: 10px;
+    margin-top: 56px;
+    cursor: pointer;
+}
+
+.create-contact-text{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.check-white{
+    width: 19.5px;
+    height: 19.5px;
+    margin-right: 8px;
+}
+
+.x-dark {
+    width: 19.5px;
+    height: 19.5px;
+}
+
+.cancle-text{
+    margin-right: 8px;
+}
+
+.create-contact-text {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+
+/*----add-tast-popUp---------*/
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Abdunkelung des Hintergrunds */
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+  }
+  
+  .popup-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border-radius: 30px;
+    transform: translate(-50%, -50%);
+    width: 1116px;
+    height: 914px;
+    background-color: #ffffff;
+    z-index: 10000;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+    
+
+  }
+  
+  .popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+  
+  .popup-content.active {
+    opacity: 1;
+  }
+
+  .popup-content::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5; /* Hintergrund des Scrollbars
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+    background-color: #888; /* Farbe des Scroll-Handles */
+    border-radius: 10px;
+    border: 3px solid #F5F5F5; /* Farbe des Scrollbar-Hintergrunds */
+}
+
+.popup-content::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Farbe des Scroll-Handles beim Überfahren mit der Maus */
+}
+
+.popup-content::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+
+.popup-content.scrolling {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+} */
+
+.dis-none {
+    display: none;
+}
+
+.add-task-form {
+    height: 100%;
+}
+
+#addTaskOpen {
+    cursor: pointer;
+}
+
+  /*---------------*/
+
+  @media (max-width: 900px) {
+    .popup-overlay.active {
+      background-color: transparent;
+    }
+    .popup-content {
+        background-color: #F5F5F5;
+        overflow-y: unset;
+    }
+  }
+  
+  @media (min-width: 321px) {
+    .popup-overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  /*------------------*/
+
+  @media (max-width: 900px) and (min-width: 280px) {
+    
+
+    
+    .popup-content {
+      position: fixed;
+      top: 80px; /* Höhe des Headers */
+      left: 0;
+      width: 100%;
+      height: calc(100% - 80px); /* Höhe des Fensters minus die Höhe des Headers */
+      transform: none; /* Keine Verschiebung */
+      z-index: 98;
+      border-radius: 0;
+      align-items: flex-start;
+      overflow-y: auto;
+    }
+
+    .popup-overlay.active {
+        top: 80px;
+    }
+    
+    
+
+    #burger-menu {
+        z-index: 9999999;
+    }
+
+    footer {
+        z-index: 0!important;
+    }
+    
+  }
+
+  @media (min-width: 1200px) {
+    
+
+    .popup-content {
+        width: 1116px
+    }
+}
+  
+
+  /*----------------*/
+
+
+  /* @media(min-width:768px) {
+    .popup-content {
+        width: 100%;
+    }
+  } */

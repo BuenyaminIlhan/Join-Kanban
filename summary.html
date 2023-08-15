@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./asssets/css/summary.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./asssets/css/header.css">
+    <link rel="shortcut icon" href="./asssets/img/mobile-login-logo-dark.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./asssets/css/footer.css">
+    <link rel="stylesheet" href="./asssets/css/web_header.css">
+    <script src="./js/storage.js"></script>
+    <script src="./js/summary.js"></script>
+    <script src="./js/board.js"></script>
+    <title>Summary</title>
+</head>
+
+<body onload="init();userGreetingOnSummary(); loadNewtasksboardd()" id="summary" class="page">
+    <div w3-header-include-html="./asssets/templates/header.html"></div>
+    <div onclick="closeBurgerMenu()" id="web-header" class="web-header">
+        <span>Kanban Project Mangement Tool</span>
+        <div class="img-container">
+            <img onclick="location.href='./help.html'" class="question-icon" src="./asssets/img/question_icon.svg"
+                alt="">
+            <img id="person-img" onclick="burgerMenu();" class="person" src="./asssets/img/person.svg" alt="">
+        </div>
+    </div>
+    <div onclick="closeBurgerMenu()" id="background-container">
+        <div class="burger-menu-outer-container">
+            <div id="burger-menu">
+                <a class="help" href="#">Help</a>
+                <a class="privacy" href="#">Leagal notice</a>
+                <a href="./index.html">Log out</a>
+            </div>
+        </div>
+    </div>
+    <div class="nav-bar-container">
+        <div id="nav-bar" onclick="closeBurgerMenu()" class="logo-container">
+            <img class="logo-white" src="./asssets/img/Join_logo_white.svg" alt="">
+        </div>
+        <nav id="nav-bar" onclick="closeBurgerMenu()">
+            <div class="nav-link-container">
+                <div onclick="location.href='./summary.html'" style="background-color: #091931;">
+                    <img class="icon" src="./asssets/img/Summary_icon_white.svg" alt="">
+                    <span id="nav-summary" style="color: white;">Summary</span>
+                </div>
+                <div onclick="location.href='./board.html'">
+                    <img class="icon" src="./asssets/img/Board_icon.svg" alt="">
+                    <span>Board</span>
+                </div>
+                <div onclick="location.href='./add_task.html'">
+                    <img class="icon" src="./asssets/img/Add_Task_icon.svg" alt="">
+                    <span>Add Task</span>
+                </div>
+                <div onclick="location.href='./contacts.html'">
+                    <img class="icon" src="./asssets/img/Contacts.svg" alt="">
+                    <span>Contacts</span>
+                </div>
+            </div>
+            <div onclick="location.href='./privacy_policy.html'" class="legal-container">
+                <img src="./asssets/img/info.svg" alt="">
+                <span>Legal notice</span>
+            </div>
+        </nav>
+        <div>
+        </div>
+    </div>
+    <div class="main-div">
+        <span class="head-span-responsive dis-none">Kanban Project Management Tool</span>
+        <section class="first-section">
+            <span class="head-span">Kanban Project Management Tool</span>
+            <span class="title">Summary</span>
+            <p class="head-span2">Everthing in a nutshell!</p>
+            <div class="underHead-line"></div>
+        </section>
+        <section class="second-section">
+            <div class="count-task">
+                <div onclick="redirectToBoard()" class="summary-counter textCenter boxshadow">
+                    <span class="s-number" id="countTodo"></span>
+                    <span class="counter-description">Tasks in<br> Board</span>
+                </div>
+                <div onclick="redirectToBoard()" class="summary-counter textCenter boxshadow">
+                    <span class="s-number" id="countInprogress"></span>
+                    <span class="counter-description">Tasks in Progress</span>
+                </div>
+                <div onclick="redirectToBoard()" class="summary-counter textCenter boxshadow">
+                    <span class="s-number" id="countFeedback"></span>
+                    <span class="counter-description">Awaiting feedback</span>
+                </div>
+            </div>
+            <div class="task-status-title">
+                <div onclick="redirectToBoard()" class="task-status">
+                    <div class="task-status-description">
+                        <img class="positionNone" src="./asssets/img/urgent-icon.svg" alt="">
+                        <div class="summary-counter">
+                            <div class="s-number" id="countPrio"></div>
+                            <div>Urgent</div>
+                        </div>
+                    </div>
+                    <div class="separation-line"></div>
+                    <div>
+                        <div id="summary-date" class="summary-date">October 16, 2023</div>
+                        <div>Upcoming Deadline</div>
+                    </div>
+                </div>
+                <div class="welcome-title">
+                    <span id="greeting"></span><br><b id="name" class="welcome-name"></b>
+                </div>
+            </div>
+            <div class="count-done">
+                <div onclick="redirectToBoard()" class="div-count1" onmouseover="changePenimage(this)"
+                    onmouseout="restorePenimage(this)">
+                    <img id="summary-pen" class="positionNone" src="./asssets/img/edit-icon.png" alt="">
+                    <div class="summary-counter">
+                        <div class="s-number" id="countTodos"></div>
+                        <div class="counter-description">To-do</div>
+                    </div>
+                </div>
+                <div onclick="redirectToBoard()" class="div-count1" onmouseover="changeDoneimage(this)"
+                    onmouseout="restoreDoneimage(this)">
+                    <img id="summary-done" class="positionNone" src="./asssets/img/done-icon.png" alt="">
+                    <div class="summary-counter">
+                        <div class="s-number" id="countDone"></div>
+                        <div class="counter-description">Done</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div id="summary-div" class="icon-container summary" style="background-color: #091931; height: 87%;">
+            <a href="./summary.html"><img class="icon" src="./asssets/img/Summary_icon_white.svg" alt=""></a>
+            <a href="./summary.html"><span style="color: white">Summary</span></a>
+        </div>
+        <div id="board-div" class="icon-container">
+            <a href="./board.html"><img class="icon" src="./asssets/img/Board_icon.svg" alt=""></a>
+            <a href="./board.html"><span>Board</span></a>
+        </div>
+        <div id="add-task-div" class="icon-container">
+            <a href="./add_task.html"><img class="add-task-icon" src="./asssets/img/Add_Task_icon.svg" alt=""></a>
+            <a href="./add_task.html"><span>Add Task</span></a>
+        </div>
+        <div id="contacts-div" class="icon-container">
+            <a href="./contacts.html"><img class="icon-contacts" src="./asssets/img/Contacts.svg" alt=""></a>
+            <a href="./contacts.html"><span>Contacts</span></a>
+        </div>
+    </footer>
+    <script src="./js/header_include.js"></script>
+</body>
+
+</html>

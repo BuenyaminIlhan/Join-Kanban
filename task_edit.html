@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./asssets/css/task_edit.css">
+  <link rel="stylesheet" href="./asssets/css/header.css">
+  <link rel="stylesheet" href="./asssets/css/footer.css">
+  <script src="./js/add_task.js"></script>
+  <script src="./js/task_edit.js"></script>
+  <script src="./header_include.js"></script>
+  <title>Task edit</title>
+</head>
+
+<body onload="init()">
+  <div w3-header-include-html="./asssets/templates/header.html"></div>
+  <div class="main-content">
+    <label class="input-lable">Title</label>
+    <input class="input-field" type="text" placeholder="Enter a title">
+    <label class="input-lable">Description</label>
+    <input class="input-field" type="text" placeholder="Enter a Description">
+    <label class="input-lable">Due date</label>
+    <input class="input-field" type="date">
+    <div class="edit-prio-section">
+      <span class="edit-prio-title">Prio</span>
+      <div class="prio-btns">
+        <button onclick="firstButtonColor()" id="firstBtn" class="edit-prio-btn">
+          <span class="prio-type">Urgent</span>
+          <img id="inProgress-icon" src="./asssets/img/inProgress-icon.svg" alt="">
+        </button>
+        <button onclick="secondButtonColor()" id="secondBtn" class="edit-prio-btn">
+          <span class="prio-type">Medium</span>
+          <img id="feedback-icon" src="./asssets/img/Feedback-icon.svg" alt="">
+        </button>
+        <button onclick="thirdButtonColor()" id="thirdBtn" class="edit-prio-btn">
+          <span class="prio-type">Low</span>
+          <img id="toDo-icon" src="./asssets/img/toDo icon.svg" alt="">
+        </button>
+      </div>
+    </div>
+    <label class="input-lable">Assigned to</label>
+    <div onclick="selectAssignedTo()" id="assign-one" class="select-one">
+      <span>Select assigned person</span>
+      <img src="./add_task_img/open.svg" alt="" />
+    </div>
+    <div id="dropdown-assign" class="d-none">
+      <div onclick="selectAssign(event)" id="assigned-one" class="selected space-between">
+        <span>You</span>
+        <input type="checkbox" id="checkbox-you" class="checkbox-style" />
+      </div>
+      <div onclick="selectAssign(event)" id="assigned-two" class="selected space-between">
+        <span>Maximilian</span>
+        <input type="checkbox" id="checkbox-max" class="checkbox-style" />
+      </div>
+      <div onclick="selectAssign(event)" id="assigned-three" class="selected">
+        <span>Invite new contact</span>
+        <img src="./add_task_img/kontakt.svg" id="contact-icon" class="icon-style" />
+      </div>
+    </div>
+    <div class="selected-all">
+      <span class="contact purple">DE</span>
+      <span class="contact orange">BZ</span>
+      <span class="contact blue">MB</span>
+    </div>
+    <button class="edit-prio-doneBTN">
+      <span class="prio-type">OK</span>
+      <img src="./asssets/img/ok-icon.svg" alt="">
+    </button>
+  </div>
+  <footer w3-footer-include-html="./asssets/templates/footer.html"></footer>
+</body>
+
+</html>

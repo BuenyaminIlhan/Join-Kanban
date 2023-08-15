@@ -1,0 +1,144 @@
+body {
+    overflow-x: hidden;
+}
+
+
+header,
+.mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    max-width: 1024px;
+    z-index: 99;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    max-width: 1024px;
+    z-index: 99;
+    display: none;
+}
+
+.person {
+    border: 2px solid #2A3647;
+    border-radius: 50%;
+    width: 39px;
+    height: 39px;
+    padding: 1px;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.logo {
+    height: 40px;
+    padding-left: 25px;
+}
+
+#background-container {
+    width: 100%;
+    height: 93vh;
+    position: absolute;
+    display: none;
+    max-width: 1024px;
+    width: 100%;
+    z-index: 99;
+    position: fixed;
+}
+
+.burger-menu-outer-container {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    padding-right: 28px;
+}
+
+#burger-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    background-color: #2A3647;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 0px 10px 10px;
+    padding: 10px;
+    width: 110px;
+    height: 99px;
+    z-index: 4;
+    animation: slide 200ms ease-in-out;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(125%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(125%);
+    }
+}
+
+#burger-menu a {
+    text-decoration: none;
+    color: #CDCDCD;
+    font-size: 16px;
+    margin-left: 8px;
+    margin-top: 7px;
+}
+
+@media (max-width:1024px) {
+    .mobile-header {
+        display: flex;
+    }
+
+    #burger-menu {
+        margin-top: 80px;
+    }
+
+    .mobile-login-users {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (min-width:1024px) {
+    #background-container {
+        max-width: 100%;
+        padding-top: 80px;
+        z-index: 99;
+    }
+
+    .help,
+    .privacy {
+        display: none;
+    }
+
+    #burger-menu {
+        height: 33px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #burger-menu a {
+        margin-top: 0;
+        margin-left: 0;
+    }
+}

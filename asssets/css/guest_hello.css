@@ -1,0 +1,49 @@
+@font-face {
+    font-family: Inter;
+    src: url(/asssets/fonts/Inter-Regular.ttf);
+    src: url(/asssets/fonts/Inter-Light.ttf);
+}
+
+body {
+    margin: 0;
+    font-family: Inter;
+}
+
+.content {
+    font-family: Inter !important;
+    width: 100%;
+    max-width: 1024px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F6F7F8;
+}
+
+h1 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    margin: 0;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+  
+  .page.show {
+    opacity: 1;
+  }
+
+#user-name {
+    color: #29ABE2;
+    font-family: Inter;
+    font-size: 47px;
+    font-weight: 700;
+    line-height: 56px;
+    letter-spacing: 0em;
+    text-align: left;    
+}

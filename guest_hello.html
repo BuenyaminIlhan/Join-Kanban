@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Log in</title>
+    <link rel="stylesheet" href="./asssets/css/header.css">
+    <link rel="shortcut icon" href="./asssets/img/mobile-login-logo-dark.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./asssets/css/footer.css">
+    <link rel="stylesheet" href="./asssets/css/guest_hello.css">
+    <script src="./js/header_include.js"></script>
+    <script src="./js/register.js"></script>
+    <script src="./js/storage.js"></script>
+    <script src="./js/login.js"></script>
+</head>
+<body onload="loadSummary()">
+    <div w3-header-include-html="./asssets/templates/header.html"></div>
+    <div  id="guest-hello" class="page show content">
+        <h1>Good morning</h1>
+        <span id="user-name"></span>
+    </div>
+    <footer w3-footer-include-html="./asssets/templates/footer.html"></footer>
+</body>
+</html>

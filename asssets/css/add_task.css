@@ -1,0 +1,824 @@
+body {
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Inter, sans-serif !important;
+}
+
+h1 {
+  font-size: 47px;
+  font-weight: 700;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  padding: 0 10px;
+  z-index: 10;
+}
+
+footer {
+  background-color: #2a3647;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+}
+
+.small-logo {
+  width: 32px;
+  height: 39px;
+  margin-left: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#create-button {
+  font-family: Inter, sans-serif !important;
+  width: 124px;
+  height: 51px;
+  color: #ffffff;
+  background: #2a3647;
+  border-radius: 10px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 120%;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  margin-right: 25px;
+  border: none;
+}
+
+.wrapper {
+  margin-top: 114px;
+  margin-left: 31px;
+  margin-right: 34px;
+}
+
+.wrapper p {
+  font-weight: 400;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.all-input,
+textarea {
+  margin-bottom: 10px;
+  text-indent: 21px;
+  background: #ffffff;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+}
+input {
+  height: 41px;
+  width: 100%;
+  font-family: Inter, sans-serif;
+}
+
+textarea {
+  height: 93px;
+  padding-top: 18px;
+  width: 100%;
+  font-family: Inter, sans-serif;
+}
+
+label {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  display: block;
+}
+
+#prio-buttons {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.prio-button {
+  height: 41px;
+  width: 100%;
+  margin-right: 10px;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: #d1d1d1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prio-button span {
+  font-weight: 400;
+}
+
+.prio-button img {
+  width: 16px;
+  margin-left: 10px;
+}
+
+.prio-img {
+  /* Andere CSS-Regeln hier */
+  transition: transform 125ms;
+  cursor: pointer;
+}
+
+.prio-img:hover {
+  transform: scale(1.02);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  /* machen Sie den Standard-Datumsauswahl-Indikator transparent */
+  opacity: 0;
+  position: absolute;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+.date-input-container {
+  position: relative;
+}
+
+input[type="date"]::before {
+  /* fügen Sie das benutzerdefinierte Bild als Pseudoelement hinzu */
+  content: "";
+  display: block;
+  position: absolute;
+  right: 10px;
+  width: 24px; /* passen Sie diese Werte an, um das Bild passend zu machen */
+  height: 24px;
+  background: url("../../add_task_img/calender-icon.svg"); /* ersetzen Sie 'path/to/your/image.png' durch den Pfad zu Ihrem Bild */
+  background-size: contain;
+}
+
+.select-one {
+  background-color: #fff;
+  height: 19px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: 125ms;
+  border: 1px solid #d1d1d1;
+  text-indent: 11px;
+}
+
+.select-one span {
+  margin-left: 10px;
+}
+
+.selected {
+  background-color: #fff;
+  height: 19px;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 400;
+  cursor: pointer;
+  border-left: 1px solid #d1d1d1;
+  border-right: 1px solid #d1d1d1;
+}
+
+.selected span {
+  margin-left: 10px;
+}
+
+.selected:hover {
+  background-color: #d1d1d1;
+}
+
+#dropdown {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 125ms ease-in-out;
+}
+
+.d-none {
+  display: none;
+}
+
+#dropdown:not(.d-none) {
+  max-height: 200px;
+}
+#selected-one {
+  border: 1px solid #d1d1d1;
+  border-top: none;
+  border-bottom: none;
+}
+#selected-two {
+  border: 1px solid #d1d1d1;
+  border-top: none;
+  border-bottom: none;
+}
+#selected-three {
+  border: 1px solid #d1d1d1;
+  border-top: none;
+}
+
+#selected-contact {
+  display: flex;
+}
+
+.color-circle {
+  margin-left: 10px;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border: 3px solid white;
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.join-color {
+  background: #2a3647;
+}
+
+/* ======= Colors ======= */
+
+.brown {
+  background: #333303;
+}
+
+.yellow {
+  background: #e1e104;
+}
+
+.orange {
+  background: #ff7a00;
+}
+
+.light-orange {
+  background: #ffc700;
+}
+
+.purple {
+  background: #9327ff;
+}
+
+.dark-blue {
+  background: #0223cf;
+}
+
+.blue {
+  background: #0223cf;
+}
+
+.light-blue {
+  background: #29abe2;
+}
+
+.pink {
+  background: #fc71ff;
+}
+
+.dark-pink {
+  background: #944796;
+}
+
+.light-green {
+  background: #02fe38;
+}
+
+.green {
+  background: #02cf2f;
+}
+
+.dark-green {
+  background: #077e21;
+}
+
+.light-red {
+  background: #f42424;
+}
+
+.red {
+  background: #af1616;
+}
+
+.dark-red {
+  background: #901e1e;
+}
+
+.gray {
+  background: #d1d1d1;
+}
+
+.white {
+  color: #ffffff;
+}
+
+#new-category-fields {
+  position: relative; /* Dies macht das div zum Container für absolut positionierte Elemente */
+}
+
+#new-category-name {
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+  font-weight: 400;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  position: relative; /* Für die Positionierung der Icons */
+}
+#new-category-colors {
+  display: flex;
+}
+
+.hover-dot {
+  margin-right: 20px;
+}
+
+.hover-dot:hover {
+  border-radius: 50%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.icons-wrapper-two {
+  position: absolute; /* Positioniert das div relativ zum nächstgelegenen positionierten Vorfahren (in diesem Fall #new-category-fields) */
+  right: 10px; /* Positioniert das div 10px vom rechten Rand des Containers entfernt */
+  top: 30%; /* Positioniert das div auf halber Höhe des Containers */
+  transform: translateY(
+    -50%
+  ); /* Verschiebt das div um 50% seiner Höhe nach oben, um es vertikal zu zentrieren */
+}
+
+/* ... Assigned-to ... */
+
+/* Checkbox-Stil */
+.checkbox-style {
+  width: 15px;
+  margin-right: 10px;
+}
+
+.checkbox-subtask {
+  width: 15px;
+}
+
+/* Icon-Stil */
+.icon-style {
+  margin-left: auto;
+  margin-right: 10px;
+  height: 16px;
+  width: 16px;
+}
+
+#delete-subtask {
+  margin-left: 20px;
+}
+
+.select-one img {
+  margin-right: 10px;
+}
+
+/* Stil für das neue Dropdown-Menü */
+#dropdown-assign {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 125ms ease-in-out;
+  overflow-y: auto;
+}
+
+/* Für WebKit-Browser wie Chrome, Safari, und neuere Opera-Versionen */
+#dropdown-assign::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Hintergrund der Scrollleiste */
+#dropdown-assign::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  margin-bottom: 15px;
+}
+
+/* Griff der Scrollleiste */
+#dropdown-assign::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px; /* Für abgerundete Ecken */
+}
+
+/* Scrollleiste beim Überfahren mit der Maus */
+#dropdown-assign::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#dropdown-assign:not(.d-none) {
+  max-height: 200px;
+  border-bottom: 0.5px solid #d1d1d1;
+  border-radius: 0 0 10px 10px;
+}
+
+#assigned-one {
+  border: 1px solid #d1d1d1;
+  border-top: none;
+  border-bottom: none;
+}
+
+#assigned-two {
+  border: 1px solid #d1d1d1;
+  border-top: none;
+  border-bottom: none;
+}
+
+#assigned-three {
+  border: 1px solid #d1d1d1;
+  border-top: none;
+}
+
+#new-contact-fields {
+  position: relative;
+}
+
+#new-contact-fields input {
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+  font-weight: 400;
+  width: 100%;
+  height: 51px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.icons-wrapper-three {
+  position: absolute; /* Positioniert das div relativ zum nächstgelegenen positionierten Vorfahren (in diesem Fall #new-category-fields) */
+  right: 10px; /* Positioniert das div 10px vom rechten Rand des Containers entfernt */
+  top: 42%; /* Positioniert das div auf halber Höhe des Containers */
+  transform: translateY(
+    -50%
+  ); /* Verschiebt das div um 50% seiner Höhe nach oben, um es vertikal zu zentrieren */
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-subtask {
+  color: #d1d1d1;
+}
+
+#subtasks {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.subtask-name {
+  margin: 0;
+  margin-left: 5px;
+}
+
+.subtask {
+  display: flex;
+  align-items: center;
+}
+
+#subtask {
+  display: block;
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 0;
+  font-size: 16px;
+  border-radius: 10px;
+  color: #2a3647;
+  background-image: url(../../asssets/img/plus-black.svg);
+  background-repeat: no-repeat;
+  background-position: center right 10px;
+  background-size: 16px 16px; /* Anpassen der Größe des Bildes */
+}
+
+.subtask-input:focus {
+  outline: none;
+  border-color: #29abe2;
+}
+
+.subtask-input-wrapper {
+  position: relative;
+}
+
+.plus-icon {
+  position: absolute;
+  right: 10px;
+  top: 45%;
+  transform: translateY(-50%);
+}
+
+.icons-wrapper {
+  position: absolute;
+  right: 10px;
+  top: 45%;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.subtask-input:focus + .icons-wrapper {
+  display: block; /* Die Icons anzeigen, wenn das Input-Feld fokussiert ist */
+}
+
+.task-added-container {
+  display: none;
+  justify-content: center;
+}
+
+#task-added {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 72%;
+  color: #fff;
+  background-color: #2a3647;
+  border-radius: 20px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 30.5px;
+  padding-left: 30.5px;
+}
+
+#task-added span {
+  font-size: 21px;
+}
+
+#task-added img {
+  margin-left: 26px;
+  width: 26px;
+  height: 22px;
+}
+
+.dateInput {
+  text-indent: 11px !important;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.cancel-btn-desktop {
+  display: none;
+}
+.create-btn-desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  form {
+    flex-direction: row;
+  }
+
+  .inner-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  .section-one {
+    min-width: 330px;
+    padding-right: 15px;
+  }
+
+  .section-two {
+    min-width: 330px;
+    padding-left: 15px;
+    position: relative;
+  }
+}
+
+@media (min-width: 831px) {
+  .vertical-line {
+    border-left: 1px solid #d1d1d1; /* Die Dicke und Farbe der Linie anpassen */
+    height: 500px; /* Höhe nach Bedarf anpassen */
+    width: 0;
+  }
+
+  .section-one {
+    min-width: 292px;
+    padding-right: 50px;
+  }
+
+  .section-two {
+    min-width: 292px;
+    padding-left: 45px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    align-items: flex-start;
+    margin-left: 308px;
+    margin-right: 0;
+  }
+  #task-added {
+    top: 86%;
+    left: 42%;
+  }
+
+  input {
+    height: 47px;
+    width: 100%;
+  }
+
+  .select-one {
+    height: 49px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .select-one-div {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cancel-btn-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Inter, sans-serif !important;
+    width: 124px;
+    height: 51px;
+    background: #ffffff;
+    border: 1px solid #2a3647;
+    border-radius: 10px;
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 21px;
+    height: 55px;
+    width: 136px;
+    position: absolute;
+    left: 0;
+    top: 500px;
+    transition: 125ms ease-in-out;
+    cursor: pointer;
+  }
+
+  .cancel-btn-desktop:hover {
+    border: 1px solid #29abe2;
+    color: #29abe2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .cancel-img {
+    margin-left: 16px;
+  }
+
+  .cancel-img-hover {
+    display: none;
+  }
+
+  .create-btn-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Inter, sans-serif !important;
+    width: 124px;
+    height: 51px;
+    background: #2a3647;
+    color: #ffffff;
+    border: 1px solid #2a3647;
+    border-radius: 10px;
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 21px;
+    height: 55px;
+    width: 187px;
+    position: absolute;
+    right: 0;
+    top: 500px;
+    transition: 125ms ease-in-out;
+    cursor: pointer;
+  }
+
+  .create-btn-desktop:hover {
+    background-color: #29abe2;
+    border-color: #29abe2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .create-correctly {
+    margin-left: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section-one {
+    min-width: 330px;
+    padding-right: 50px;
+  }
+
+  .section-two {
+    min-width: 330px;
+    padding-left: 45px;
+  }
+
+  .cancel-btn-desktop {
+    left: 23px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .section-one {
+    min-width: 440px;
+    padding-right: 50px;
+  }
+
+  .section-two {
+    min-width: 440px;
+    padding-left: 45px;
+  }
+  .cancel-btn-desktop {
+    left: 133px;
+  }
+}
+
+/*--alert-popup----*/
+
+.popupContainer {
+  display: none;
+  position: absolute;
+  top: 160px;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.popupBody {
+  padding: 5px;
+  background-color: #e90000;
+  border: 3px solid red;
+  border-radius: 10px;
+  width: 100%;
+  margin: 16px;
+}
+
+#popupDismiss {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#popupDismiss:hover,
+#popupDismiss:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#popupNote {
+  margin: 16px;
+  font-weight: 700;
+  color: white;
+}

@@ -1,0 +1,95 @@
+ @font-face {
+    font-family: Inter;
+    src: url(../../asssets/fonts/Inter-Regular.ttf);
+}
+
+body {
+    margin: 0;
+    font-family: Inter, sans-serif !important;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2A3647;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    right: 0px;
+    left: 0;
+    gap: 10px;
+    max-width: 1024px;
+    Padding: 0px, 12px, 0px, 12px;
+    width: 100%;
+    z-index: 99;
+    display: none;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    padding-bottom: 10px !important;
+}
+.clicked {
+    background-color: red;
+}
+
+.icon {
+    height: 22px;
+    cursor: pointer;
+}
+
+.icon-container span {
+    cursor: pointer;
+    color: #CDCDCD;
+    font-size: 16px;
+}
+
+.icon-container a {
+    text-decoration: none;
+}
+
+.add-task-icon {
+    padding-top: 14.5px;
+    height: 26px;
+    width: 26px;
+    padding-bottom: 6px;
+    cursor: pointer;
+}
+
+.add-task-icon span {
+    cursor: pointer;
+    padding-bottom: 10px;
+    color: #CDCDCD;
+    font-size: 16px;
+}
+
+.icon-contacts {
+    width: 24px !important;
+    height: 28px !important;
+    padding-bottom: 6px;
+    cursor: pointer;
+    padding-top: 14.5px;
+}
+
+@media (max-width: 1024px) {
+    footer {
+        display: flex;
+    }
+    .icon {
+        padding-top: 14.5px;
+        padding-bottom: 6px;
+
+    }
+}
+
+@media (max-width:420px) {
+    .icon-container span {
+        font-size: 13px;
+    }
+}

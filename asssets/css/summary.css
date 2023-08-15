@@ -1,0 +1,317 @@
+* {
+    box-sizing: unset;
+}
+
+.dis-none {
+    display: none;
+}
+
+body {
+    background: #F6F7F8;
+    font-family: 'Inter';
+    font-style: normal;
+    margin: 0;
+}
+
+.main-div {
+    display: flex;
+    flex-direction: column;
+    width: 87%;
+    padding-top: 85px;
+}
+
+.first-section {
+    margin-top: 35px;
+    margin-left: 33px;
+    display: flex;
+    flex-direction: column;
+}
+
+.head-span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #000000;
+    margin-bottom: 19px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 47px;
+}
+
+.head-span2 {
+    font-weight: 400;
+    font-size: 21px;
+    color: #2A3647;
+    margin-top: 20px;
+}
+
+.underHead-line {
+    margin-bottom: 41px;
+    margin-top: 11px;
+    width: 73px;
+    border: 1.5px solid #29ABE2;
+    border-radius: 50px;
+}
+
+.second-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 33px;
+}
+
+.count-task {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 15px;
+}
+
+.count-task div {
+    width: 100%;
+    max-width: 170px;
+    height: 110px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.task-status-title {
+    display: flex;
+    align-items: center;
+}
+
+.welcome-title {
+    margin-left: 67px;
+    font-weight: 500;
+    font-size: 2.5vw;
+    display: none;
+    margin-right: 123px
+}
+
+.welcome-name {
+    font-weight: 700;
+    font-size: 3.4vw;
+    color: #29ABE2;
+}
+
+.task-status {
+    width: 100%;
+    max-width: 580px;
+    height: 110px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+
+.separation-line {
+    width: 2px;
+    height: 68px;
+    background-color: #d1d1d1;
+}
+
+.count-done {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.div-count1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 272px;
+    height: 110px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.task-status-description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+}
+
+.positionNone {
+    position: unset;
+    width: 41px;
+    height: 42px;
+}
+
+.summary-counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.s-number {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 47px;
+    margin-top: 10px;
+
+}
+
+.summary-date {
+    font-weight: 700;
+    font-size: 16px;
+    padding-bottom: 8px;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.boxshadow {
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 390px) {
+    .main-div {
+        padding-top: 70px;
+    }
+
+    .head-span {
+        margin-bottom: 10px;
+    }
+
+    .head-span2 {
+        margin-top: 10px;
+    }
+
+    .underHead-line {
+        margin-bottom: 16px;
+        margin-top: -3px;
+    }
+}
+
+@media (min-width: 768px) {
+    .main-div {
+        float: right;
+    }
+
+    .summary-counter:hover {
+        background-color: #2A3647;
+        color: #ffffff;
+    }
+
+    .task-status:hover {
+        background-color: #2A3647;
+        color: #ffffff;
+    }
+
+    .div-count1:hover {
+        background-color: #2A3647;
+        color: #ffffff;
+    }
+}
+
+@media (min-width: 1024px) {
+    .count-task div {
+        height: 170px;
+    }
+
+    .main-div {
+        padding-top: 100px;
+    }
+
+    .count-task {
+        gap: 35px;
+    }
+
+    .count-done {
+        gap: 35px;
+    }
+
+    .s-number {
+        font-weight: 600;
+        font-size: 64px;
+    }
+
+    .counter-description {
+        font-weight: 400;
+        font-size: 21px;
+    }
+
+    .div-count1 {
+        height: 150px;
+    }
+
+    .task-status {
+        height: 150px;
+    }
+
+    .head-span {
+        display: none;
+    }
+
+    .first-section {
+        display: flex;
+        flex-direction: row;
+        gap: 135px;
+        position: relative;
+        align-items: center;
+        margin-left: 135px;
+    }
+
+    .underHead-line {
+        position: absolute;
+        left: 323px;
+        rotate: 90deg;
+        width: 59px;
+        margin-top: 36px;
+    }
+
+    .title {
+        font-size: 61px;
+    }
+
+    .head-span2 {
+        font-size: 27px;
+        margin-left: -39px;
+    }
+
+    .second-section {
+        margin-top: 87px;
+        gap: 33px;
+        margin-left: 135px;
+    }
+
+    .welcome-title {
+        display: block;
+    }
+}
+
+@media (max-height: 724px){
+    .count-task div {
+        height: 90px;
+    }
+
+    .task-status {
+        height: 90px;
+    }
+
+    .div-count1 {
+        height: 80px;
+    }
+
+    .s-number {
+        font-size: 34px;
+        margin-top: 0;
+    }
+}

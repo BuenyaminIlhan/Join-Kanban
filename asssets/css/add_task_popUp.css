@@ -1,0 +1,817 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 63px;
+}
+
+h1 {
+  font-size: 47px;
+  font-weight: 700;
+}
+
+.select-one-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 41px;
+}
+
+.all-input,
+textarea {
+  margin-bottom: 10px;
+  background: #ffffff;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+  text-indent: 10px;
+}
+input {
+  height: 41px;
+  width: 100%;
+}
+
+textarea {
+  height: 93px;
+  padding-top: 18px;
+  width: 100%;
+}
+
+label {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  display: block;
+}
+
+#prio-buttons {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.prio-button {
+  height: 41px;
+  width: 100%;
+  margin-right: 10px;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: #d1d1d1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prio-button span {
+  font-weight: 400;
+}
+
+.prio-img {
+  /* Andere CSS-Regeln hier */
+  transition: transform 125ms;
+  cursor: pointer;
+}
+
+.prio-img:hover {
+  transform: scale(1.02);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  /* machen Sie den Standard-Datumsauswahl-Indikator transparent */
+  opacity: 0;
+  position: absolute;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+.date-input-container {
+  position: relative;
+}
+
+input[type="date"]::before {
+  /* fügen Sie das benutzerdefinierte Bild als Pseudoelement hinzu */
+  content: "";
+  display: block;
+  position: absolute;
+  right: 10px;
+  width: 24px; /* passen Sie diese Werte an, um das Bild passend zu machen */
+  height: 24px;
+  background: url("../../add_task_img/calender-icon.svg"); /* ersetzen Sie 'path/to/your/image.png' durch den Pfad zu Ihrem Bild */
+  background-size: contain;
+}
+
+.contacts {
+  display: none;
+  height: 90px;
+  width: 100%;
+  z-index: 99;
+  justify-content: end;
+  flex-direction: column;
+  align-items: end;
+  gap: 2px;
+}
+.contacts div {
+  cursor: pointer;
+}
+
+.select-one {
+  background-color: #fff;
+  height: 25px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 400;
+  transition: 125ms;
+  border: 1px solid #d1d1d1;
+  cursor: pointer;
+  /* flex-direction: column; */
+}
+
+.select-one span {
+  margin-left: 10px;
+}
+
+.selected {
+  background-color: #fff;
+  height: 19px;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 400;
+  cursor: pointer;
+  border-left: 1px solid #d1d1d1;
+  border-right: 1px solid #d1d1d1;
+}
+
+.selected span {
+  margin-left: 10px;
+}
+
+.selected:hover {
+  background-color: #d1d1d1;
+}
+
+#dropdown {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 125ms ease-in-out;
+}
+
+.d-none {
+  display: none;
+}
+
+#dropdown:not(.d-none) {
+  max-height: 200px;
+}
+#selected-one {
+  border: 1px solid #d1d1d1;
+  border-top: none;
+  border-bottom: none;
+}
+#selected-two {
+  border: 1px solid #d1d1d1;
+  border-top: none;
+  border-bottom: none;
+}
+#selected-three {
+  border: 1px solid #d1d1d1;
+  border-top: none;
+}
+
+.color-circle {
+  margin-left: 10px;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border: 3px solid white;
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.orange {
+  background: #ff7a00;
+}
+
+.purple {
+  background: #9327ff;
+}
+
+.light-blue {
+  background: #29abe2;
+}
+
+.pink {
+  background: #fc71ff;
+}
+.blue {
+  background: #0038ff;
+}
+
+.green {
+  background: #02cf2f;
+}
+
+.light-green {
+  background: #1fd7c1;
+}
+
+.red {
+  background: #af1616;
+}
+.dark-blue {
+  background: #2a3647;
+}
+
+#new-category-fields {
+  position: relative; /* Dies macht das div zum Container für absolut positionierte Elemente */
+}
+
+#new-category-name {
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+  font-weight: 400;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  position: relative; /* Für die Positionierung der Icons */
+}
+#new-category-colors {
+  display: flex;
+}
+
+.hover-dot {
+  margin-right: 20px;
+}
+
+.hover-dot:hover {
+  border-radius: 50%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.icons-wrapper-two {
+  position: absolute; /* Positioniert das div relativ zum nächstgelegenen positionierten Vorfahren (in diesem Fall #new-category-fields) */
+  right: 10px; /* Positioniert das div 10px vom rechten Rand des Containers entfernt */
+  top: 30%; /* Positioniert das div auf halber Höhe des Containers */
+  transform: translateY(
+    -50%
+  ); /* Verschiebt das div um 50% seiner Höhe nach oben, um es vertikal zu zentrieren */
+}
+
+/* ... Assigned-to ... */
+
+/* Checkbox-Stil */
+.checkbox-style {
+  width: 15px;
+  margin-right: 10px;
+}
+
+.checkbox-subtask {
+  width: 15px;
+}
+
+/* Icon-Stil */
+.icon-style {
+  margin-left: auto;
+  margin-right: 10px;
+  height: 16px;
+  width: 16px;
+}
+
+.select-one img {
+  margin-right: 10px;
+}
+
+/* Stil für das neue Dropdown-Menü */
+#dropdown-assign {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 125ms ease-in-out;
+  overflow-y: auto;
+}
+
+/* Für WebKit-Browser wie Chrome, Safari, und neuere Opera-Versionen */
+#dropdown-assign::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Hintergrund der Scrollleiste */
+#dropdown-assign::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  margin-bottom: 15px;
+}
+
+/* Griff der Scrollleiste */
+#dropdown-assign::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px; /* Für abgerundete Ecken */
+}
+
+/* Scrollleiste beim Überfahren mit der Maus */
+#dropdown-assign::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#dropdown-assign:not(.d-none) {
+  max-height: 250px;
+  border-bottom: 0.5px solid #d1d1d1;
+  border-radius: 0 0 10px 10px;
+}
+
+#assigned-one {
+  border: 1px solid #d1d1d1;
+  border-top: none;
+  border-bottom: none;
+}
+
+#assigned-two {
+  border: 1px solid #d1d1d1;
+  border-top: none;
+  border-bottom: none;
+}
+
+#assigned-three {
+  border: 1px solid #d1d1d1;
+  border-top: none;
+}
+
+#new-contact-fields {
+  position: relative;
+}
+
+#new-contact-fields input {
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+  font-weight: 400;
+  width: 100%;
+  height: 51px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.icons-wrapper-three {
+  position: absolute; /* Positioniert das div relativ zum nächstgelegenen positionierten Vorfahren (in diesem Fall #new-category-fields) */
+  right: 10px; /* Positioniert das div 10px vom rechten Rand des Containers entfernt */
+  top: 42%; /* Positioniert das div auf halber Höhe des Containers */
+  transform: translateY(
+    -50%
+  ); /* Verschiebt das div um 50% seiner Höhe nach oben, um es vertikal zu zentrieren */
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-subtask {
+  color: #d1d1d1;
+}
+
+#subtasks {
+  display: flex;
+  flex-direction: column;
+}
+
+.subtask-name {
+  margin: 0;
+  margin-left: 5px;
+}
+
+.subtask {
+  display: flex;
+  align-items: center;
+}
+
+#subtask {
+  display: block;
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 0;
+  font-size: 16px;
+  border-radius: 10px;
+  color: #2a3647;
+  background-image: url(../../asssets/img/plus-black.svg);
+  background-repeat: no-repeat;
+  background-position: center right 10px;
+  background-size: 16px 16px; /* Anpassen der Größe des Bildes */
+}
+
+.subtask-input:focus {
+  outline: none;
+  border-color: #29abe2;
+}
+
+.subtask-input-wrapper {
+  position: relative;
+}
+
+.plus-icon {
+  position: absolute;
+  right: 10px;
+  top: 45%;
+  transform: translateY(-50%);
+}
+
+.icons-wrapper {
+  position: absolute;
+  right: 10px;
+  top: 45%;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.subtask-input:focus + .icons-wrapper {
+  display: block; /* Die Icons anzeigen, wenn das Input-Feld fokussiert ist */
+}
+
+.task-added-container {
+  display: flex;
+  justify-content: center;
+}
+
+#task-added {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 72%;
+  color: #fff;
+  background-color: #2a3647;
+  border-radius: 20px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 30.5px;
+  padding-left: 30.5px;
+}
+
+#task-added span {
+  font-size: 21px;
+}
+
+#task-added img {
+  margin-left: 26px;
+  width: 26px;
+  height: 22px;
+}
+
+.btn-div {
+  display: flex;
+  position: absolute;
+  top: 500px;
+  right: 0;
+}
+
+.cancel-btn-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter, sans-serif !important;
+  width: 124px;
+  height: 51px;
+  background: #ffffff;
+  border: 1px solid #2a3647;
+  border-radius: 10px;
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 21px;
+  height: 55px;
+  width: 136px;
+  transition: 125ms ease-in-out;
+  cursor: pointer;
+}
+
+.cancel-btn-desktop:hover {
+  border: 1px solid #29abe2;
+  color: #29abe2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cancel-img {
+  margin-left: 16px;
+}
+
+.cancel-img-hover {
+  display: none;
+}
+.create-btn-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter, sans-serif !important;
+  width: 124px;
+  height: 51px;
+  background: #2a3647;
+  color: #ffffff;
+  border: 1px solid #2a3647;
+  border-radius: 10px;
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 21px;
+  height: 55px;
+  width: 187px;
+  transition: 125ms ease-in-out;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.create-btn-desktop:hover {
+  background-color: #29abe2;
+  border-color: #29abe2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.create-correctly {
+  margin-left: 16px;
+}
+
+.site-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.site-title img {
+  width: 28px;
+  cursor: pointer;
+}
+
+#delete-subtask {
+  margin-left: 20px;
+}
+
+#selected-image {
+  display: none;
+}
+
+.task-added-container {
+  display: none;
+  justify-content: center;
+}
+
+#task-added {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 72%;
+  color: #fff;
+  background-color: #2a3647;
+  border-radius: 20px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 30.5px;
+  padding-left: 30.5px;
+  z-index: 9999;
+}
+
+#task-added span {
+  font-size: 21px;
+}
+
+#task-added img {
+  margin-left: 26px;
+  width: 26px;
+  height: 22px;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(500%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) and (min-width: 280px) {
+  .inner-wrap {
+    display: block;
+    width: 100%;
+  }
+
+  /* .popup-overlay.active {
+      opacity: 0;
+      visibility: hidden;
+      
+  } */
+
+  #prio-buttons {
+    flex-wrap: wrap;
+  }
+  .site-title {
+    width: 100%;
+  }
+  .wrapper {
+    width: 100%;
+    margin: 31px;
+  }
+  .section-one {
+    width: 100%;
+  }
+
+  .section-two {
+    width: 100%;
+    padding-left: 0;
+    position: relative;
+  }
+
+  .header-popup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    padding: 0 10px;
+    z-index: 100;
+  }
+
+  .cancel-btn-desktop {
+    display: none;
+  }
+  .create-btn-desktop {
+    display: none;
+  }
+
+  header {
+    z-index: 90;
+  }
+
+  .small-logo {
+    width: 32px;
+    height: 39px;
+    margin-left: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  #create-button {
+    font-family: Inter, sans-serif !important;
+    width: 124px;
+    height: 51px;
+    color: #ffffff;
+    background: #2a3647;
+    border-radius: 10px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 120%;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    margin-right: 25px;
+    border: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .header-popup {
+    display: none;
+  }
+
+  .vertical-line {
+    border-left: 1px solid #d1d1d1; /* Die Dicke und Farbe der Linie anpassen */
+    height: 670px; /* Höhe nach Bedarf anpassen */
+    width: 0;
+  }
+
+  .wrapper {
+    align-items: center;
+  }
+  .section-one {
+    min-width: 300px;
+    padding-right: 45px;
+    margin-bottom: 40px;
+  }
+
+  .section-two {
+    min-width: 300px;
+    padding-left: 40px;
+    position: relative;
+  }
+  .site-title {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    align-items: center;
+  }
+  .section-one {
+    min-width: 340px;
+    padding-right: 50px;
+  }
+
+  .section-two {
+    min-width: 340px;
+    padding-left: 45px;
+  }
+  .site-title {
+    width: 100%;
+  }
+}
+#selected-contact {
+  display: flex;
+  margin-top: 10px;
+}
+
+@media (min-width: 1200px) {
+  .section-one {
+    min-width: 440px;
+    padding-right: 50px;
+  }
+
+  .section-two {
+    min-width: 440px;
+    padding-left: 45px;
+  }
+}
+
+@media (min-width: 1440px) {
+}
+
+.create-correctly {
+  margin-left: 16px;
+}
+.cancel-img-hover {
+  display: none;
+}
+.cancel-img {
+  margin-left: 16px;
+}
+
+/*--alert-popup----*/
+
+.popupContainer {
+  display: none;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  z-index: 10000;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.popupBody {
+  padding: 5px;
+  background-color: #e90000;
+  border: 3px solid red;
+  border-radius: 10px;
+  width: 100%;
+  margin: 16px;
+}
+
+#popupDismiss {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#popupDismiss:hover,
+#popupDismiss:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#popupNote {
+  margin: 16px;
+  font-weight: 700;
+  color: white;
+}

@@ -1,0 +1,447 @@
+
+.orange{
+    background: #FF7A00;
+}
+
+.purple{
+    background: #9327FF;
+}
+
+.light-blue{
+    background: #29ABE2;
+}
+
+.pink{
+    background: #FC71FF;
+}
+.dark-pink{
+    background: #944796;
+  }
+.blue{
+    background: #0038FF;
+}
+
+.green{
+    background: #02CF2F;
+}
+.dark-green{
+    background: #077E21;
+  }
+
+.light-green{
+    background: #1FD7C1;
+}
+
+.red{
+    background: #AF1616 ;
+}
+
+.dark-red{
+    background: #901e1e;
+  }
+  
+.dark-blue{
+    background: #2A3647 ;
+}
+
+
+
+
+
+    /* Head  */
+
+.popUp-head-task {
+    display: flex;
+    justify-content: space-between;
+    
+    margin-right: 31px;
+    
+    margin-bottom: 29px;
+    margin-top: 54px;
+}
+
+.popUp-head-task img {
+    cursor: pointer;
+}
+
+.edit-wrap {
+    margin-left: 50px;
+    margin-right: 50px;
+    overflow-y: auto;
+    max-height: 824px;
+    
+}
+
+/* Das gilt für den gesamten Scrollbar */
+.edit-wrap::-webkit-scrollbar {
+    width: 5px;  /* Breite der vertikalen Scrollbar */
+    height: 5px; /* Höhe der horizontalen Scrollbar */
+  }
+  
+  /* Handle (Griff) */
+  .edit-wrap::-webkit-scrollbar-thumb {
+    background: #888; /* Farbe des Griffs */
+    border-radius: 2px; /* Rundung des Griffs */
+  }
+  
+  /* Handle (Griff) beim Überfahren */
+  .edit-wrap::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Farbe des Griffs beim Überfahren */
+  }
+  
+  /* Track (Laufschiene) */
+  .edit-wrap::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Farbe der Laufschiene */
+    border-radius: 2px; /* Rundung der Laufschiene */
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+.task-category-one {
+    text-align: center;
+    padding: 4px 36.5px;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 21px;
+    color: #FFFFFF;
+    
+    
+}
+
+    /* Title  */
+
+.popUp-titled {
+    font-weight: 700;
+    font-size: 61px;
+    color: #2A3647;
+    
+}
+
+    /* Description */
+
+.popUp-description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.bolder {
+    font-weight: 700;
+    margin-right: 25px;
+    font-size: 21px;
+}
+
+.popUp-date {
+    
+    font-weight: 400;
+    font-size: 21px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.popUp-prio {
+    display: flex ;
+    align-items: center;
+    
+    font-weight: 400;
+    font-size: 21px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* .popUp-prio-btn {
+    width: fit-content;
+    padding: 4px 18px;
+    background: #FF3D00;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+} */
+
+.popUp-prio-btn span {
+    color: #FFFFFF;
+    margin-right: 10px;
+}
+
+/* <!------------- Assigned to Section ------------> */
+
+.assignedTo-titlE {
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 29px;
+    margin-left: 50px;
+    margin-bottom: 31px;
+}
+
+.assignedTo-listE {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 50px;
+    font-weight: 400;
+    font-size: 16px;
+    gap: 13px;
+}
+
+.assignedTo-divE {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-left: 50px;
+    margin-bottom: 14px;
+    margin-top: 14px;
+}
+
+.assignedTo-iconE {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #FFFFFF;
+    border-radius: 58px;
+    width: 45px;
+    height: 45px;
+    color: #FFFFFF;
+}
+
+.assignedTo-name {
+    font-size: 21px;
+}
+
+.popUp-btns {
+    display: flex;
+    max-width: 597px;
+    margin-right: 10%;
+    align-items: flex-end;
+    margin-top: 100px;
+    
+}
+
+.popUp-btns img {
+    cursor: pointer;
+}
+
+.btns-responsive {
+    display: flex;
+    justify-content: space-between;
+    max-width: 597px;
+    margin-right: 33px;
+    position: relative;
+    bottom: 42px;
+    
+}
+
+.popUp-delete {
+    max-width: 40px;
+    height: auto;
+    
+}
+
+.popUp-edit {
+    width: 50px;
+    height: 50px;
+    
+}
+.popUp-edit-responsive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: #2A3647;
+    border-radius: 0px 10px 10px 0px;
+    cursor: pointer;
+}
+
+.popUp-delete-responsive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid #2A3647;
+    border-radius: 10px 0px 0px 10px;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+}
+
+.popUp-edit-responsive:hover {
+    background-color: #29ABE2;
+    
+}
+
+.popUp-delete-responsive:hover {
+    border: 1px solid #29ABE2;
+    width: 48px;
+    height: 48px;
+}
+
+
+
+@media (max-width: 370px) {
+    .assignedTo-divE {
+        margin-left: 16px;
+    }
+}
+
+@media (max-width: 650px) {
+    
+    #taskContent {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .edit-wrap {
+        width: 100%;
+        max-height: 100%;
+        margin-left: 16px;
+    }
+
+    /* .secondTypebtns{
+        display: none
+    } */
+
+}
+
+@media (max-width: 550px) {
+    
+    /* #taskContent {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .edit-wrap {
+        width: 100%;
+        height: 100%;
+    } */
+
+    /* .secondTypebtns{
+        display: none
+    } */
+
+}
+@media (min-width: 550px) {
+
+    .secondTypebtns{
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .popUp-edit {
+        margin-left: -2px;
+    }
+
+    .firstTypebtns {
+        display: none;
+    }
+
+    .close-popUp-arrows {
+        display: none;
+    }
+
+    .close-popUp-xx {
+        display: block;
+        position: relative;
+        bottom: 17px;
+    }
+}
+
+/*----add-task-popUp---------*/
+.task-overlay-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Abdunkelung des Hintergrunds */
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+  }
+  
+  .task-content-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border-radius: 30px;
+    transform: translate(-50%, -50%);
+    width: 623px;
+    background-color: #ffffff;
+    z-index: 10000;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+
+  }
+  
+  .task-overlay-popup.active {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+  
+  .task-content-popup.active {
+    opacity: 1;
+  }
+
+  /* -----editPopup--- */
+
+ 
+  /* .edit-wrap {
+    height: 824px;
+  } */
+
+
+ .edit-wrap button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .edit-wrap button:hover {
+    background-color: #29abe2;
+  }
+
+  .ok-button {
+    
+    width: 80px;
+    height: 40px;
+    margin-left: 20px;
+    color: white;
+    background-color: #2a3647;
+    border-color: transparent;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    
+  }
+
+  .ok-button:hover {
+    background-color: #29ABE2;
+    border-color: #29ABE2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .cancel-button-edit {
+    width: 80px;
+    height: 40px;
+    border: 1px solid #2A3647;
+    margin-left: 20px;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  .cancel-button-edit:hover {
+    border: 1px solid #29ABE2;
+    color: #29ABE2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  }

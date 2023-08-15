@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./asssets/css/board.css" />
+    <script src="./js/storage.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="shortcut icon"
+      href="./asssets/img/mobile-login-logo-dark.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./asssets/css/header.css" />
+    <link rel="stylesheet" href="./asssets/css/footer.css" />
+    <link rel="stylesheet" href="./asssets/css/add_task_popUp.css" />
+    <link rel="stylesheet" href="./task-popUp.css" />
+    <link rel="stylesheet" href="./asssets/css/web_header.css" />
+    <script src="./js/board.js"></script>
+    <script src="./js/add_task_popup.js"></script>
+    <script src="./js/header_include.js"></script>
+    <title>Board</title>
+  </head>
+
+  <body onload="init(); loadNewtasksboard(); loadContactsForAssign()">
+    <div w3-header-include-html="./asssets/templates/header.html"></div>
+    <div onclick="closeBurgerMenu()" id="web-header" class="web-header">
+      <span>Kanban Project Mangement Tool</span>
+      <div class="img-container">
+        <img
+          onclick="location.href='./help.html'"
+          class="question-icon"
+          src="./asssets/img/question_icon.svg"
+          alt=""
+        />
+        <img
+          id="person-img"
+          onclick="burgerMenu();"
+          class="person"
+          src="./asssets/img/person.svg"
+          alt=""
+        />
+      </div>
+    </div>
+    <div onclick="closeBurgerMenu()" id="background-container">
+      <div class="burger-menu-outer-container">
+        <div id="burger-menu">
+          <a class="help" href="#">Help</a>
+          <a class="privacy" href="#">Leagal notice</a>
+          <a href="./index.html">Log out</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-bar-container">
+      <div id="nav-bar" onclick="closeBurgerMenu()" class="logo-container">
+        <img
+          class="logo-white"
+          src="./asssets/img/Join_logo_white.svg"
+          alt=""
+        />
+      </div>
+      <nav id="nav-bar" onclick="closeBurgerMenu()">
+        <div class="nav-link-container">
+          <div onclick="location.href='./summary.html'">
+            <img
+              class="icon"
+              src="./asssets/img/Summary_icon_white.svg"
+              alt=""
+            />
+            <span id="nav-summary">Summary</span>
+          </div>
+          <div
+            onclick="location.href='./board.html'"
+            style="background-color: #091931"
+          >
+            <img class="icon" src="./asssets/img/board_icon_white.svg" alt="" />
+            <span style="color: white">Board</span>
+          </div>
+          <div onclick="location.href='./add_task.html'">
+            <img class="icon" src="./asssets/img/Add_Task_icon.svg" alt="" />
+            <span>Add Task</span>
+          </div>
+          <div onclick="location.href='./contacts.html'">
+            <img class="icon" src="./asssets/img/Contacts.svg" alt="" />
+            <span>Contacts</span>
+          </div>
+        </div>
+        <div
+          onclick="location.href='./privacy_policy.html'"
+          class="legal-container"
+        >
+          <img src="./asssets/img/info.svg" alt="" />
+          <span>Legal notice</span>
+        </div>
+      </nav>
+      <div></div>
+    </div>
+    <div class="main-div">
+      <div id="myCustomPopup" class="popupContainer">
+        <div class="popupBody">
+          <span id="popupDismiss">&times;</span>
+          <p id="popupNote"></p>
+        </div>
+      </div>
+      <div class="head-span">Kanban Project Management Tool</div>
+      <div class="title-section">
+        <h1 class="title">Board</h1>
+        <img class="edit-btn" src="./asssets/img/add task mobile.svg" alt="" />
+        <div class="responsive-searchbar dis-none">
+          <div class="secondSearch-bar">
+            <input
+              id="searchTask-input"
+              onkeydown="filterTasks()"
+              class="search-input"
+              type="text"
+              placeholder="Find Task"
+            />
+            <img
+              class="search-bar-line"
+              src="./asssets/img/searchBar line.svg"
+              alt=""
+            />
+            <img
+              class="search-icon"
+              src="./asssets/img/search-icon.svg"
+              alt=""
+            />
+          </div>
+          <div class="button-add-div open-popup">
+            <span>Add task</span>
+            <img
+              class="open-popup"
+              src="./asssets/img/plus-svg.svg"
+              alt="plus icon"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="search-bar">
+        <input class="search-input" type="text" placeholder="Find Task" />
+        <img
+          class="search-bar-line"
+          src="./asssets/img/searchBar line.svg"
+          alt=""
+        />
+        <img class="search-icon" src="./asssets/img/search-icon.svg" alt="" />
+      </div>
+      <div class="task-content">
+        <div class="task-list">
+          <div class="card-head">
+            <div class="head-title">To do</div>
+            <div
+              onmouseover="changeImage(this)"
+              onmouseout="restoreImage(this)"
+            >
+              <img id="add-card" src="./asssets/img/add-card.svg" alt="" />
+            </div>
+          </div>
+          <div class="empty-card">No tasks to do</div>
+          <div
+            class="list"
+            id="todo-card"
+            ondrop="moveTo('todo'); removeHighlight('todo-card')"
+            ondragleave="removeHighlight('todo-card')"
+            ondragover="allowDrop(event); highlight('todo-card')"
+          ></div>
+        </div>
+        <div class="task-list">
+          <div class="card-head">
+            <div class="head-title">In progress</div>
+            <div
+              onmouseover="changeImage(this)"
+              onmouseout="restoreImage(this)"
+            >
+              <img id="add-card" src="./asssets/img/add-card.svg" alt="" />
+            </div>
+          </div>
+          <div id="empty-card-progress" class="empty-card">
+            No tasks in progress
+          </div>
+          <div
+            class="list"
+            id="progress-card"
+            ondrop="moveTo('inProgress'); removeHighlight('progress-card')"
+            ondragleave="removeHighlight('progress-card')"
+            ondragover="allowDrop(event); highlight('progress-card')"
+          >
+            <div class="task-card">
+              <div class="task-category pink"></div>
+              <div class="task-title"></div>
+              <div class="task-description"></div>
+              <div class="task-assignedTo">
+                <div class="task-icons">
+                  <span class="orange"></span>
+                  <span class="purple"></span>
+                  <span class="dark-blue"></span>
+                </div>
+                <img src="./asssets/img/inProgress-icon.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="task-list">
+          <div class="card-head">
+            <div class="head-title">Awaiting Feedback</div>
+            <div
+              onmouseover="changeImage(this)"
+              onmouseout="restoreImage(this)"
+            >
+              <img id="add-card" src="./asssets/img/add-card.svg" alt="" />
+            </div>
+          </div>
+          <div id="empty-card-feedback" class="empty-card">
+            No tasks awaiting feedback
+          </div>
+          <div
+            class="list"
+            id="Feedback-card"
+            ondrop="moveTo('feedback'); removeHighlight('Feedback-card')"
+            ondragleave="removeHighlight('Feedback-card')"
+            ondragover="allowDrop(event); highlight('Feedback-card')"
+          >
+            <div class="task-card">
+              <div class="task-category light-green"></div>
+              <div class="task-title"></div>
+              <div class="task-description"></div>
+              <div class="task-assignedTo">
+                <div class="task-icons"></div>
+                <img src="./asssets/img/Feedback-icon.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!----------- Done Section ---------------->
+
+        <div class="task-list">
+          <div class="card-head">
+            <div class="head-title">Done</div>
+            <div
+              onmouseover="changeImage(this)"
+              onmouseout="restoreImage(this)"
+            >
+              <img id="add-card" src="./asssets/img/add-card.svg" alt="" />
+            </div>
+          </div>
+          <div id="empty-card-done" class="empty-card">No tasks done</div>
+          <div
+            class="list"
+            id="done-card"
+            ondrop="moveTo('done'); removeHighlight('done-card')"
+            ondragleave="removeHighlight('done-card')"
+            ondragover="allowDrop(event); highlight('done-card')"
+          >
+            <div class="task-card card-with-PBar">
+              <div class="task-category blue"></div>
+              <div class="task-title"></div>
+              <div class="task-description"></div>
+              <div class="task-progress">
+                <div
+                  class="progress"
+                  role="progressbar"
+                  aria-label="Info example"
+                  aria-valuenow="50"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="progress-bar bg-info" style="width: 100%"></div>
+                </div>
+                <div class="progress-steps"></div>
+              </div>
+              <div class="task-assignedTo">
+                <div class="task-icons"></div>
+                <img src="./asssets/img/toDo-icon.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-------------------- Add Task popUp----------------------->
+    <div class="popup-overlay">
+      <div class="popup-content" id="popupContent">
+        <header class="header-popup">
+          <img
+            class="small-logo"
+            src="./add_task_img/small-logo.svg"
+            alt="Logo"
+          />
+          <button onclick="createTask()" id="create-button">
+            Create &#10003;
+          </button>
+        </header>
+        <div class="wrapper">
+          <div class="site-title">
+            <h1>Add Task</h1>
+            <img
+              class="close-task"
+              src="./asssets/img/close-x-dark.svg"
+              alt=""
+              onclick="closePopup()"
+            />
+          </div>
+
+          <div class="inner-wrap">
+            <section class="section-one">
+              <form>
+                <label for="title-input">Title</label>
+                <input
+                  class="all-input"
+                  id="title-input"
+                  type="text"
+                  name="title"
+                  required
+                />
+
+                <label for="description-input">Description</label>
+                <textarea
+                  id="description-input"
+                  name="description"
+                  required
+                ></textarea>
+
+                <label for="Category">Category</label>
+                <div
+                  onclick="selectTaskCategory()"
+                  id="select-one"
+                  class="select-one"
+                >
+                  <div class="select-one-div">
+                    <span>Select task category</span>
+                    <div class="circle"></div>
+                  </div>
+                  <img src="./asssets/img/open.svg" alt="" />
+                </div>
+
+                <!-- Hinzufügen des neuen Elements für das ausgewählte Bild -->
+                <div id="selected-image"></div>
+
+                <div id="dropdown" class="d-none">
+                  <div
+                    onclick="showNewCategoryFields()"
+                    id="selected-one"
+                    class="selected"
+                  >
+                    <span>New Category</span>
+                  </div>
+                  <div
+                    onclick="selectOption(event, '#00FF00')"
+                    id="selected-two"
+                    class="selected"
+                  >
+                    <span>Sales</span>
+                    <div class="circle green"></div>
+                  </div>
+                  <div
+                    onclick="selectOption(event, '#2A3647')"
+                    id="selected-three"
+                    class="selected"
+                  >
+                    <span>Backoffice</span>
+                    <div class="circle dark-blue"></div>
+                  </div>
+                </div>
+
+                <div id="new-category-fields" class="d-none">
+                  <input
+                    id="new-category-name"
+                    type="text"
+                    placeholder="Category name"
+                  />
+                  <div class="icons-wrapper-two">
+                    <img
+                      src="./asssets/img/cancel-svg.svg"
+                      id="cross-icon"
+                      onclick="cancelNewCategory()"
+                    />
+                    |
+                    <img
+                      src="./asssets/img/checkmark.svg"
+                      id="check-icon"
+                      onclick="saveNewCategory()"
+                    />
+                  </div>
+
+                  <div id="new-category-colors">
+                    <div
+                      class="circle dark-blue"
+                      onclick="selectColor('#2A3647')"
+                    ></div>
+                    <div
+                      class="circle green"
+                      onclick="selectColor('#00FF00')"
+                    ></div>
+                    <div
+                      class="circle light-blue"
+                      onclick="selectColor('#ADD8E6')"
+                    ></div>
+                    <div
+                      class="circle orange"
+                      onclick="selectColor('#FFA500')"
+                    ></div>
+                    <div
+                      class="circle pink"
+                      onclick="selectColor('#FFC0CB')"
+                    ></div>
+                    <div
+                      class="circle red"
+                      onclick="selectColor('#FF0000')"
+                    ></div>
+                  </div>
+                </div>
+
+                <label for="Assigned-to">Assigned to</label>
+                <div
+                  onclick="selectAssignedTo()"
+                  id="assign-one"
+                  class="select-one"
+                >
+                  <span>Select assigned person</span>
+                  <img src="./add_task_img/open.svg" alt="" />
+                </div>
+
+                <div id="dropdown-assign" class="d-none">
+                  <div
+                    onclick="showInviteContactFields()"
+                    id="assigned-three"
+                    class="selected"
+                  >
+                    <span>Invite new contact</span>
+                    <img
+                      src="./add_task_img/kontakt.svg"
+                      id="contact-icon"
+                      class="icon-style"
+                    />
+                  </div>
+                </div>
+
+                <div id="selected-contact"></div>
+
+                <div id="new-contact-fields" class="d-none">
+                  <input
+                    type="text"
+                    id="new-contact-email"
+                    placeholder="Enter email address"
+                  />
+                  <div class="icons-wrapper-three">
+                    <img
+                      src="./asssets/img/cancel-svg.svg"
+                      id="cross-icon2"
+                      onclick="cancelInviteContact()"
+                    />
+                    |
+                    <img
+                      src="./asssets/img/checkmark.svg"
+                      id="check-icon2"
+                      onclick="saveInviteContact()"
+                    />
+                  </div>
+                </div>
+              </form>
+            </section>
+
+            <div class="vertical-line"></div>
+
+            <section class="section-two">
+              <form>
+                <label for="date-input">Due Date</label>
+                <div class="date-input-container">
+                  <input
+                    class="all-input"
+                    type="date"
+                    placeholder="dd/mm/yyyy"
+                  />
+                </div>
+
+                <label for="prio-buttons">Prio</label>
+                <div id="prio-buttons">
+                  <img
+                    id="urgent"
+                    class="prio-img"
+                    src="./asssets/img/urgent-urgent.svg"
+                    alt=""
+                  />
+                  <img
+                    id="medium"
+                    class="prio-img"
+                    src="./asssets/img/medium-urgent.svg"
+                    alt=""
+                  />
+                  <img
+                    id="low"
+                    class="prio-img"
+                    src="./asssets/img/low-urgent.svg"
+                    alt=""
+                  />
+                </div>
+
+                <label for="subTask">Subtasks</label>
+                <div
+                  class="subtask-input-wrapper"
+                  onmouseover="toggleIcons('block')"
+                  onmouseout="toggleIcons('none')"
+                >
+                  <input
+                    type="text"
+                    id="subTask"
+                    class="subtask-input all-input"
+                    placeholder="Add new subtask"
+                  />
+                  <img src="./asssets/img/plus-black.svg" class="plus-icon" />
+                  <div class="icons-wrapper">
+                    <img
+                      src="./asssets/img/cancel-svg.svg"
+                      id="cross-icon"
+                      onclick="clearInput()"
+                    />
+                    |
+                    <img
+                      src="./asssets/img/checkmark.svg"
+                      id="check-icon"
+                      onclick="createSubtask()"
+                    />
+                  </div>
+                </div>
+
+                <div id="subtasks">
+                  <!-- Dieses Element wird als Container für die neuen Subtasks verwendet -->
+                  <div class="subtask"></div>
+                </div>
+
+                <div class="btn-div">
+                  <div class="cancel-btn-desktop" onclick="closePopup()">
+                    <span>Cancel</span>
+                    <img
+                      class="cancel-img"
+                      src="./asssets/img/cancel-svg.svg"
+                      alt=""
+                    />
+                  </div>
+
+                  <div class="create-btn-desktop">
+                    <span>Create task</span>
+                    <img
+                      class="create-correctly"
+                      src="./asssets/img/hook-correctly.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------Task overlay------------ -->
+
+    <div id="task-overlay-popup" class="task-overlay-popup">
+      <div class="task-content-popup" id="taskContent"></div>
+    </div>
+
+    <!-- <footer w3-footer-include-html="/asssets/templates/footer.html"></footer> -->
+    <footer>
+      <div id="summary-div" class="icon-container summary">
+        <a href="./summary.html"
+          ><img class="icon" src="./asssets/img/Summary_icon_grey.svg" alt=""
+        /></a>
+        <a href="./summary.html"><span>Summary</span></a>
+      </div>
+      <div
+        id="board-div"
+        class="icon-container"
+        style="background-color: #091931; height: 87%"
+      >
+        <a href="./board.html"
+          ><img class="icon" src="./asssets/img/board_icon_white.svg" alt=""
+        /></a>
+        <a href="./board.html"><span style="color: white">Board</span></a>
+      </div>
+      <div id="add-task-div" class="icon-container">
+        <a href="./add_task.html"
+          ><img
+            class="add-task-icon"
+            src="./asssets/img/Add_Task_icon.svg"
+            alt=""
+        /></a>
+        <a href="./add_task.html"><span>Add Task</span></a>
+      </div>
+      <div id="contacts-div" class="icon-container">
+        <a href="./contacts.html"
+          ><img class="icon-contacts" src="./asssets/img/Contacts.svg" alt=""
+        /></a>
+        <a href="./contacts.html"><span>Contacts</span></a>
+      </div>
+    </footer>
+    <!-- createTask-animation -->
+    <div class="task-added-container">
+      <div id="task-added">
+        <span>Task added to board</span>
+        <img src="./add_task_img/gitter.svg" alt="" />
+      </div>
+    </div>
+
+    <script src="./js/add_task.js"></script>
+  </body>
+</html>
